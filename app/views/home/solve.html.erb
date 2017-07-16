@@ -8,7 +8,7 @@
     <%= form_tag '/evaluate',remote: true do %>
 
 	<%= text_area_tag 'source'%>
-	<%= hidden_field_tag 'testcases',JSON.parse(@ques.first.testcases)%>
+	<%= hidden_field_tag 'testcases',(@ques.first.testcases)%>
 	<%= select_tag 'lang', options_for_select(@names.collect{ |key,value| [value, @codes[key]] }) %>
 	<%= select_tag 'format', options_for_select(["JSON","XML"]) %>
 	<%= hidden_field_tag 'api_key','hackerrank|2357374-1588|c8cb820f84f230248f9117b777b64f017d2cad2f' %>
